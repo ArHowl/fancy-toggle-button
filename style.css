@@ -1,0 +1,221 @@
+body {
+  background-color: grey;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 44px;
+
+  scale: 3;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  box-shadow: 
+    inset 0px 2px 2px #000000aa,
+    inset 0px -1px 1px #FFFFFF55;
+
+  border-radius: 40px;
+}
+
+.slider > .circle {
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  left: 4px;
+  top: 4px;
+  border: none;
+  border-radius: 100%;
+}
+
+input:checked + .slider > .circle{
+  transform: translateX(56px);
+}
+
+
+
+
+#switch-0{
+  position: fixed;
+  left: 50%;
+  top: 200px;
+}
+
+
+
+
+#switch-1 {
+  position: fixed;
+  left: 50%;
+  top: 400px;
+}
+
+
+#switch-1 .slider {
+  /* background: #87ceeb; */
+  background: #87ceeb url( "img/bg.png" );
+  background-size: cover;
+  background-position: bottom;
+
+  transition: .6s ease-in-out;
+
+  overflow: hidden;
+}
+
+#switch-1 .slider > .circle {
+  transition: .6s ease-in-out;
+}
+
+#switch-1 .slider > .circle > .moon-patt{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url( "img/moon.png" );
+  background-size: cover;
+  
+  transition: .6s ease-in-out;
+  opacity: 0;
+}
+
+
+
+#switch-1 .slider > .circle .light {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+  opacity: .1;
+}
+
+#switch-1 .slider > .circle .light.lv1 {
+  scale: 2;
+}
+#switch-1 .slider > .circle .light.lv2 {
+  scale: 3;
+}
+#switch-1 .slider > .circle .light.lv3 {
+  scale: 4;
+}
+#switch-1 .slider > .circle .light.lv4 {
+  scale: 5;
+}
+
+#switch-1 .slider > .circle .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 100%;
+
+  
+  transition: .6s ease-in-out;
+
+
+  background: #ffbb00;
+  box-shadow: 
+    inset 1px 1px 4px #FFFFFF,
+    inset -2px -2px 4px #ff8800aa,
+    1px 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+
+
+#switch-1 input:checked + .slider {
+  background-color: #000022;
+  background-position: top;
+}
+
+
+#switch-1 input:checked + .slider > .circle {
+  transform: translateX(56px);
+}
+
+#switch-1  input:checked + .slider > .circle > .moon-patt {
+  opacity: 1;
+}
+
+#switch-1  input:checked + .slider > .circle > .overlay {
+  box-shadow: 
+  inset 1px 1px 4px #FFFFFF,
+  inset -2px -2px 4px #000000aa,
+  1px 2px 2px 0 rgba(0,0,0,0.2);
+
+  background-color: #cccccc;
+}
+
+
+
+#switch-2{
+  position: fixed;
+  left: 50%;
+  top: 600px;
+}
+
+
+#switch-2 .slider {
+  /* background: #87ceeb; */
+  background: #99ff99;
+
+  transition: .6s ease-in-out;
+
+  overflow: hidden;
+}
+
+#switch-2 .slider > .emoji-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -60px;
+  
+  transition: .6s ease-in-out;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+} 
+
+#switch-2 .slider > .emoji-list > .smile { 
+  width: 36px;
+  height: 36px;
+  margin-left: 5px;
+  background-image: url( "img/smile.png" );
+  background-size: cover;
+  
+  transition: .6s ease-in-out;
+}
+
+#switch-2 .slider > .emoji-list > .finger { 
+  width: 20px;
+  height: 20px;
+  background-image: url( "img/finger.png" );
+  background-size: cover;
+}
+
+
+#switch-2 input:checked + .slider {
+  background-color: #ff0000;
+}
+
+#switch-2 input:checked + .slider > .emoji-list {
+  translate: 56px;
+}
+
+
+
